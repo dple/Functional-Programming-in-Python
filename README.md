@@ -39,3 +39,12 @@ def ceasar_cipher(plain):
     out = 'XYZABCDEFGHIJKLMNOPQRSTUVWxyzabcdefghijklmnopqrstuvw '
     return ''.join(map(lambda x: out[in_.index(x)], plain))
 ```
+
+
+Another example combinning **map** and **reduce** is to calculate an inner product of two vectors x, y:
+
+```
+def inner_product(a, b):
+    return reduce(lambda x, y: x + y, map(lambda x, y: x * y, a, b))
+```
+
