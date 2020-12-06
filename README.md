@@ -2,7 +2,7 @@
 
 In the following we examine high order functions in Python.
 
-## Reduce
+### Reduce
 
 Function **reduce**(function, seq) is introduced in the package functools. This function will apply a particular *function* (1st argument) to all elements mentioned in the sequence *seq*. 
 
@@ -30,7 +30,7 @@ def multiple_gcd(arr):
   return reduce(gcd, arr) 
 ```
 
-## Map
+### Map
 Function **map**(function, iter) allows us to apply a *function* to every element in an iterable object. For example, Ceasar cipher can be implemented by using **map()** as follows:
 
 ```
@@ -40,7 +40,27 @@ def ceasar_cipher(plain):
     return ''.join(map(lambda x: out[in_.index(x)], plain))
 ```
 
+### Filter
 
+Function **filter**(function, iter) tests every element in an iterable object with a *function* that returns either **True** or **False**, only keeping those which evaluates to **True**. This code return a list of odd numbers.
+
+```
+list(filter(lambda x: x % 2 != 0, range(100)))
+```
+
+
+
+### Combining these functions
+
+#### Map and filter
+Combining **filter()** and **map()** to square odd numbers.
+
+```
+def square_odds(n):
+    return map(lambda x: x * x, filter(lambda x: x % 2 != 0, range(n)))
+```
+
+#### Map and Reduce
 Another example combinning **map** and **reduce** is to calculate an inner product of two vectors x, y:
 
 ```
