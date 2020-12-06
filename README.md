@@ -2,7 +2,7 @@
 
 In the following we examine high order functions in Python.
 
-## reduce()
+## Reduce
 
 Function **reduce**(function, seq) is introduced in the package functools. This function will apply a particular *function* (1st argument) to all elements mentioned in the sequence *seq*. 
 
