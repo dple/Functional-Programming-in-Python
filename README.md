@@ -6,6 +6,7 @@ In the following we examine high order functions in Python.
 
 Function **reduce**(function, seq) is introduced in the package functools. This function will apply a particular *function* (1st argument) to all elements mentioned in the sequence *seq*. 
 
+##### Compute the Greatest Common Divisors of mulplie numbers
 Consider the following example. Let *a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>n - 1</sub>* be integers. Find **Greatest Common Divisor**, *gcd* of those numbers. One method for this problem is to find *gcd(a<sub>0</sub>, a<sub>1</sub>)*, then *gcd(gcd(a<sub>0</sub>, a<sub>1</sub>), a<sub>2</sub>)*, and so on. This will be implemented as follows:
 
 
@@ -31,7 +32,10 @@ def multiple_gcd(arr):
 ```
 
 ### Map
-Function **map**(function, iter) allows us to apply a *function* to every element in an iterable object. For example, Ceasar cipher can be implemented by using **map()** as follows:
+Function **map**(function, iter) allows us to apply a *function* to every element in an iterable object. 
+
+##### Ceasar cipher
+For example, *Ceasar cipher* can be implemented by using **map()** as follows:
 
 ```
 def ceasar_cipher(plain):
@@ -52,7 +56,7 @@ list(filter(lambda x: x % 2 != 0, range(100)))
 
 ### Combining these functions
 
-#### Map and filter
+##### Map and filter
 Combining **filter()** and **map()** to square odd numbers.
 
 ```
@@ -60,7 +64,7 @@ def square_odds(n):
     return map(lambda x: x * x, filter(lambda x: x % 2 != 0, range(n)))
 ```
 
-#### Map and Reduce
+##### Map and Reduce
 Another example combinning **map** and **reduce** is to calculate an inner product of two vectors x, y:
 
 ```
