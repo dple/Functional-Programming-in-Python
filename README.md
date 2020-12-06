@@ -64,7 +64,7 @@ def square_odds(n):
 Another example combinning **map** and **reduce** is to calculate an inner product of two vectors x, y:
 
 ```
-def inner_product(a, b):
-    return reduce(lambda x, y: x + y, map(lambda x, y: x * y, a, b))
+def inner_product(x, y):
+    return reduce(lambda a, b: a + b, map(lambda a, b: a * b, x, y))
 ```
 
