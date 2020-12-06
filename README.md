@@ -15,17 +15,27 @@ def gcd(a, b):
     a, b = b, a % b
   return a
 
-def multiple_gcd(a):     # a is an array
-  n = len(a)
-  c = gcd(a[0], a[1])
+def multiple_gcd(arr):     # a is an array
+  n = len(arr)
+  c = gcd(arr[0], arr[1])
   for i in range(2, n):
-    c = gcd(c, a[i])
+    c = gcd(c, arr[i])
   return c
 ```
 
 By using function **reduce**, code can be simplified as follows:
 
 ```
-def multiple_gcd(a):
-  return reduce(gcd, a) 
+def multiple_gcd(arr):
+  return reduce(gcd, arr) 
+```
+
+## Map
+Function **map**(function, iter) allows us to apply a *function* to every element in an iterable object. For example, Ceasar cipher can be implemented by using **map()** as follows:
+
+```
+def ceasar_cipher(plain):
+    in_ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz '
+    out = 'XYZABCDEFGHIJKLMNOPQRSTUVWxyzabcdefghijklmnopqrstuvw '
+    return ''.join(map(lambda x: out[in_.index(x)], plain))
 ```
